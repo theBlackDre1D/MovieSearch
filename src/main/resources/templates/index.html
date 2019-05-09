@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for movie</title>
+</head>
+<body>
+
+    <h1>Search for movie!</h1>
+
+    <form th:action="@{/homescreen}" th:object="${searchMovieForm}" method="post">
+        <label for="movieName">Enter name of movie</label>
+        <input type="text" id="movieName" name="movieSearch" autofocus="autofocus">
+        <br >
+        <input type="submit" value="Search">
+    </form>
+
+    <tr th:each="movie : ${movies}">
+        <td> <p th:text="${movie.id}"></p> </td>
+        <td> <p th:text="${movie.name}"></p> </td>
+        <br>
+    </tr>
+
+</body>
+</html>
