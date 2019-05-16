@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Search for movie</title>
+    <link rel="stylesheet" href="../static/index_style.css">
 </head>
 <body>
 
@@ -15,10 +16,18 @@
         <input type="submit" value="Search">
     </form>
 
+    <form th:action="@{/homescreen}" th:object="${searchMovieForm}" method="post">
+        <label for="genreSearch">Search by genre</label>
+        <input type="text" id="genreSearch" name="genreSearch" autofocus="autofocus">
+        <br >
+        <input type="submit" value="Search">
+    </form>
+
     <tr th:each="movie : ${movies}">
-        <td> <p th:text="${movie.id}"></p> </td>
-        <td> <p th:text="${movie.name}"></p> </td>
-        <br>
+        <div class="movie">
+            <td> <p th:text="${movie.id}"></p> </td>
+            <td> <p th:text="${movie.name}"></p> </td>
+        </div>
     </tr>
 
 </body>

@@ -11,8 +11,4 @@ public class SearchMovieForm {
     public String getmMovieName() {
         return mMovieName;
     }
-
-    public void setmMovieName(String mMovieName) {
-        this.mMovieName = mMovieName;
-    }
 }
